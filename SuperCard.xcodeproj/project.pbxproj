@@ -53,6 +53,7 @@
 		FD50AB1516D627AF00CB8AD0 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FD50AB1316D627AF00CB8AD0 /* PlayingCard.m */; };
 		FD50AB1A16D627BD00CB8AD0 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = FD50AB1716D627BD00CB8AD0 /* Deck.m */; };
 		FD50AB1B16D627BD00CB8AD0 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = FD50AB1916D627BD00CB8AD0 /* PlayingCardDeck.m */; };
+		FD7FB2A616DDE50C009A82A4 /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7FB2A516DDE50C009A82A4 /* SetCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		FD50AB1716D627BD00CB8AD0 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		FD50AB1816D627BD00CB8AD0 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		FD50AB1916D627BD00CB8AD0 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		FD7FB2A416DDE50C009A82A4 /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
+		FD7FB2A516DDE50C009A82A4 /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 				FD50AB0F16D6278B00CB8AD0 /* Card Model */,
 				93C61C0216CC9E9F005282A6 /* PlayingCardView.h */,
 				93C61C0316CC9E9F005282A6 /* PlayingCardView.m */,
+				FD7FB2A416DDE50C009A82A4 /* SetCardView.h */,
+				FD7FB2A516DDE50C009A82A4 /* SetCardView.m */,
 				93C61BEE16CC9E71005282A6 /* SuperCardAppDelegate.h */,
 				93C61BEF16CC9E71005282A6 /* SuperCardAppDelegate.m */,
 				93C61BF716CC9E71005282A6 /* MainStoryboard.storyboard */,
@@ -351,6 +356,7 @@
 				FD50AB1516D627AF00CB8AD0 /* PlayingCard.m in Sources */,
 				FD50AB1A16D627BD00CB8AD0 /* Deck.m in Sources */,
 				FD50AB1B16D627BD00CB8AD0 /* PlayingCardDeck.m in Sources */,
+				FD7FB2A616DDE50C009A82A4 /* SetCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

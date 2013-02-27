@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hO6-ku-HnJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Super Card View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="0SM-A2-6Mp">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="hO6-ku-HnJ" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OGi-xy-J78">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Kmc-Im-gxg" kind="relationship" relationship="viewControllers" id="lxW-fq-m4E"/>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="bk0-Vh-xpO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quy-H5-79X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="159"/>
+        </scene>
+        <!--View Controller - Set Cards-->
+        <scene sceneID="UhH-a4-9Q4">
+            <objects>
+                <viewController id="Kmc-Im-gxg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VrX-hd-UdS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAy-ST-QrA" userLabel="Set Card View" customClass="SetCardView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.094089504729400072" green="0.67649645193494345" blue="0.69150589920000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KAy-ST-QrA" secondAttribute="bottom" constant="65" id="2vU-C1-WFW"/>
+                            <constraint firstItem="KAy-ST-QrA" firstAttribute="top" secondItem="VrX-hd-UdS" secondAttribute="top" constant="66" id="oGd-mw-wP1"/>
+                            <constraint firstItem="KAy-ST-QrA" firstAttribute="leading" secondItem="VrX-hd-UdS" secondAttribute="leading" constant="70" id="p3A-c0-0er"/>
+                            <constraint firstItem="KAy-ST-QrA" firstAttribute="centerX" secondItem="VrX-hd-UdS" secondAttribute="centerX" type="default" id="y0t-PN-bw2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Set Cards" id="0CG-0k-sIc" userLabel="Tab Bar Item - SetCard"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgg-qO-amb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="-127"/>
+        </scene>
+        <!--Super Card View Controller - Playing Cards-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SuperCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-A5-Iwr" customClass="PlayingCardView">
@@ -28,6 +73,7 @@
                             <constraint firstItem="hmn-A5-Iwr" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="qRZ-yK-4fc"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Playing Cards" id="dMx-KE-JXZ" userLabel="Tab Bar Item - Playing Card"/>
                     <connections>
                         <outlet property="playingCardView" destination="hmn-A5-Iwr" id="Rbg-cI-Zfh"/>
                     </connections>
@@ -39,6 +85,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="202" y="524"/>
         </scene>
     </scenes>
     <classes>
@@ -47,6 +94,9 @@
         </class>
         <class className="PlayingCardView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
+        </class>
+        <class className="SetCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardView.h"/>
         </class>
         <class className="SuperCardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SuperCardViewController.h"/>
