@@ -99,6 +99,53 @@
     CGContextRestoreGState(context);
 }
 
+- (void) drawOneSymbol:(SymbolType)symbol
+        usingColor:(UIColor *)color
+      usingShading:(ShadingType)shading
+{
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2), self.bounds.size.height * (0.5 - (0.5 * SYMBOL_HEIGHT)))
+          usingColor:color
+        usingShading:shading];
+}
+
+- (void) drawTwoSymbols:(SymbolType)symbol
+        usingColor:(UIColor *)color
+      usingShading:(ShadingType)shading
+{
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
+                                 self.bounds.size.height * (1-2*SYMBOL_HEIGHT-((1-3*SYMBOL_HEIGHT)/4))/2)
+          usingColor:color
+        usingShading:shading];
+    
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1-SYMBOL_WIDTH)/2),
+                                 self.bounds.size.height * (1-2*SYMBOL_HEIGHT-((1-3*SYMBOL_HEIGHT)/4)/2)+SYMBOL_HEIGHT+((1-3*SYMBOL_HEIGHT)/4))
+          usingColor:color
+        usingShading:shading];
+}
+
+- (void) drawThreeSymbols:(SymbolType)symbol
+             usingColor:(UIColor *)color
+           usingShading:(ShadingType)shading
+{
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1-SYMBOL_WIDTH)/2),
+                                 self.bounds.size.height * ((1 - (3 * SYMBOL_HEIGHT))/4))
+          usingColor:color        usingShading:shading];
+    
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
+                                 self.bounds.size.height * (0.5 - (0.5 * SYMBOL_HEIGHT)))
+          usingColor:color        usingShading:shading];
+    
+    [self drawSymbol:symbol
+          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
+                                 self.bounds.size.height * (1 - ((1 - (3 * SYMBOL_HEIGHT))/4) - SYMBOL_HEIGHT))
+          usingColor:color        usingShading:shading];
+}
+
 - (void)drawRect:(CGRect)rect
 {
     // Draw the card outline
@@ -110,43 +157,19 @@
     [[UIColor blackColor] setStroke];
     [roundedRect stroke];
 
+    UIColor *purple = [UIColor purpleColor];
+    UIColor *red = [UIColor redColor];
+    UIColor *blue = [UIColor blueColor];
+    
     // Draw one symbol
-    /*
-
-    [self drawSymbol:kSquiggle
-          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2), self.bounds.size.height * (0.5 - (0.5 * SYMBOL_HEIGHT)))
-          usingColor:[UIColor purpleColor]
-        usingShading:kStriped];
+    [self drawOneSymbol:kDiamond usingColor:purple usingShading:kFilled];
 
     // Draw two symbols
-    [self drawSymbol:kDiamond
-          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
-                 self.bounds.size.height * (1-2*SYMBOL_HEIGHT-((1-3*SYMBOL_HEIGHT)/4))/2)
-          usingColor:[UIColor blueColor]
-        usingShading:kStriped];
-    [self drawSymbol:kSquiggle
-          atLocation:CGPointMake(self.bounds.size.width * ((1-SYMBOL_WIDTH)/2),
-                 self.bounds.size.height * (1-2*SYMBOL_HEIGHT-((1-3*SYMBOL_HEIGHT)/4)/2)+SYMBOL_HEIGHT+((1-3*SYMBOL_HEIGHT)/4))
-          usingColor:[UIColor greenColor]
-        usingShading:kFilled];
-*/
+    [self drawTwoSymbols:kOval usingColor:red usingShading:kStriped];
 
     // Draw three symbols
-    [self drawSymbol:kOval
-          atLocation:CGPointMake(self.bounds.size.width * ((1-SYMBOL_WIDTH)/2),
-                 self.bounds.size.height * ((1 - (3 * SYMBOL_HEIGHT))/4))
-          usingColor:[UIColor blueColor]
-        usingShading:kStriped];
-    [self drawSymbol:kDiamond
-          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
-                    self.bounds.size.height * (0.5 - (0.5 * SYMBOL_HEIGHT)))
-          usingColor:[UIColor redColor]
-        usingShading:kFilled];
-    [self drawSymbol:kSquiggle
-          atLocation:CGPointMake(self.bounds.size.width * ((1 - SYMBOL_WIDTH) / 2),
-                 self.bounds.size.height * (1 - ((1 - (3 * SYMBOL_HEIGHT))/4) - SYMBOL_HEIGHT))
-          usingColor:[UIColor yellowColor]
-        usingShading:kOutlined];
+    [self drawThreeSymbols:kSquiggle usingColor:blue usingShading:kOutlined];
+
 }
 
 
